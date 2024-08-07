@@ -1,0 +1,390 @@
+html.dark {
+    --color-background: #282f2f;
+    --color-alt: #0f1414;
+    --color-hover: #010303;
+    --color-border: #ccc;
+    --color-primary: #fff;
+    --color-hasTextWarning: #ffdd57
+}
+html.light {
+    --color-background: #fff;
+    --color-alt: #dddddd;
+    --color-hover: #ccc;
+    --color-border: #000;
+    --color-primary: #000;
+    --color-hasTextWarning: #7a6304;
+}
+html.night {
+    --color-background: #282f2f;
+    --color-alt: #1b1b1b;
+    --color-hover: #0a0a0a;
+    --color-border: #ccc;
+    --color-primary: #fff;
+    --color-hasTextWarning: #ffdd57;
+}
+html.darkNight {
+    --color-background: #282f2f;
+    --color-alt: #1b1b1b;
+    --color-hover: #0a0a0a;
+    --color-border: #ccc;
+    --color-primary: #b8b8b8;
+    --color-hasTextWarning: #ffcc00;
+}
+html.redgreen {
+    --color-background: #282f2f;
+    --color-alt: #1b1b1b;
+    --color-hover: #0a0a0a;
+    --color-border: #ccc;
+    --color-primary: #fff;
+    --color-hasTextWarning: #ffdd57;
+}
+html.gruvboxLight {
+    --color-background: #fbf1c7;
+    --color-alt: #f9f5d7;
+    --color-hover: #e8e4c6;
+    --color-border: #3c3836;
+    --color-primary: #3c3836;
+    --color-hasTextWarning: #b57614;
+}
+html.gruvboxDark {
+    --color-background: #282828;
+    --color-alt: #1d2021;
+    --color-hover: #0c0f10;
+    --color-border: #3c3836;
+    --color-primary: #ebdbb2;
+    --color-hasTextWarning: #fabd2f;
+}
+html.orangeSoda {
+    --color-background: #131516;
+    --color-alt: #292929;
+    --color-hover: #181818;
+    --color-border: #313638;
+    --color-primary: #EBDBB2;
+    --color-hasTextWarning: #F06543;
+}
+html.dracula {
+    --color-background: #282a36;
+    --color-alt: #1d2021;
+    --color-hover: #C0F10;
+    --color-border: #44475a;
+    --color-primary: #f8f8f2;
+    --color-hasTextWarning: #f1fa8c;
+}
+
+html .script-modal-content {
+    background-color: var(--color-background);
+}
+
+html .script-modal-header {
+    border-color: var(--color-border);
+}
+
+/*
+html .script-modal-body .button {
+    background-color: var(--color-alt);
+}*/
+
+html .script-modal-body table td,
+html .script-modal-body table th {
+    border-color: var(--color-border);
+}
+
+html .script-collapsible {
+    background-color: var(--color-alt);
+}
+
+html .script-collapsible:after {
+    color: var(--color-primary);
+}
+
+html .script-contentactive,
+html .script-collapsible:hover {
+    background-color: var(--color-hover);
+}
+
+html .percentage-full-progress-bar-wrapper {
+    background-color: var(--color-hasTextWarning)15;
+}
+html .percentage-full-progress-bar {
+    background-color: var(--color-hasTextWarning)75;
+}
+
+html .percentage-full-progress-bar-wrapper.is-replicating {
+    background-image: linear-gradient(135deg,var(--color-hasTextWarning)30 25%,transparent 25%,transparent 50%,var(--color-hasTextWarning)30 50%,var(--color-hasTextWarning)30 75%,transparent 75%,transparent);
+}
+
+html #active_targets .target-type-box {
+    background-color: var(--color-alt)75;
+}
+
+.script-lastcolumn:after { float: right; content: "\21c5"; }
+.script-refresh:after { float: right; content: "\21ba"; cursor: pointer; }
+.script-draggable { cursor: move; cursor: grab; }
+.script-draggable:active { cursor: grabbing !important; }
+.ui-sortable-helper { display: table; cursor: grabbing !important; }
+
+.script-collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.script-collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.script-contentactive:after {
+    content: "\2212";
+}
+
+.script-content {
+    padding: 0 18px;
+    display: none;
+    /* max-height: 0; */
+    overflow: hidden;
+    /* transition: max-height 0.2s ease-out; */
+}
+
+.script-searchsettings {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Open script options button */
+.s-options-button {
+    padding-right: 2px;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.script-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(10,10,10,.86); /* Blackish w/ opacity */
+    overflow-y: auto; /* Allow scrollbar */
+}
+
+/* Modal Content/Box */
+.script-modal-content {
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0px;
+    width: 900px;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.script-modal-content.override-modal {
+    width: 70%;
+    min-width: 900px;
+}
+
+/* The Close Button */
+.script-modal-close {
+    float: right;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.script-modal-close:hover,
+.script-modal-close:focus {
+    cursor: pointer;
+}
+
+/* Modal Header */
+.script-modal-header {
+    padding: 4px 16px;
+    margin-bottom: .5rem;
+    border-bottom: #ccc solid .0625rem;
+    text-align: center;
+}
+
+/* Modal Body */
+.script-modal-body {
+    padding: 2px 16px;
+    text-align: center;
+    overflow: auto;
+}
+
+/* Autocomplete styles */
+.ui-autocomplete {
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+    z-index: 10000 !important;
+}
+
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.selectable span {
+    -moz-user-select: text !important;
+    -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+.ea-craft-toggle {
+    max-width:75px;
+    margin-top:4px;
+    float:right;
+    left:50%;
+}
+
+/* Reduce message log clutterness */
+.main #msgQueueFilters span:not(:last-child) {
+    margin-right: 0.25rem !important;
+}
+
+/* Fixes for game styles */
+.main .resources .resource :first-child { white-space: nowrap; }
+#popTimer { margin-bottom: 0.1rem }
+.barracks { white-space: nowrap; }
+.area { width: calc(100% / 6) !important; max-width: 8rem; }
+.offer-item { width: 15% !important; max-width: 7.5rem; }
+.tradeTotal { margin-left: 11.5rem !important; }
+
+/* Styles for queued targets UI */
+#active_targets-wrapper {
+    padding: 1rem;
+    max-height: 50vh;
+}
+
+#sideQueue #active_targets-wrapper {
+    max-height: 50vh;
+}
+
+#active_targets {
+    font-size: 0.9em;
+    max-width: 500px;
+}
+
+#active_targets .target-type-box {
+    background-color: #1d2021;
+    margin: 10px 0;
+    padding: 0.5rem 1rem;
+}
+
+#active_targets ul {
+    list-style-type: none;
+    padding-top: 5px;
+}
+
+.active_targets-list > li {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.active-target-title {
+    display: inline-block;
+}
+.active-target-title.name {
+    width: 40%;
+}
+.active-target-title.time {
+    width: 40%;
+}
+.active-target-segments {
+    white-space: nowrap;
+}
+
+#active_targets .active_targets-sub-list {
+    list-style-type: none;
+}
+
+#active_targets .active_targets-sub-list li {
+    width: 100%;
+    padding: 0;
+}
+
+#active_targets > ul > li:not(:first-child) {
+    margin-top: 10px;
+}
+
+#active_targets .active_targets-resource-text {
+    display: flex;
+    width: 40%;
+}
+
+#active_targets .active_targets-resource-text span {
+    margin-left: 10px;
+}
+
+#active_targets .active_targets-resource-row {
+    display: flex;
+}
+
+#active_targets .active_targets-resource-row .percentage-full-progress-bar-wrapper {
+    display: flex;
+    margin: 5px 0 0 0;
+    width: 35%;
+    height: 9px;
+    overflow: hidden;
+}
+
+.percentage-full-progress-bar-wrapper.is-replicating {
+    background-image: linear-gradient(135deg,rgba(255,255,255,.95) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.95) 50%,rgba(255,255,255,.95) 75%,transparent 75%,transparent);
+    background-size: 20px 20px;
+    animation: progress-bar-stripes 2s linear reverse infinite;
+}
+
+@keyframes progress-bar-stripes {
+    0% {
+    background-position: 40px 0;
+    }
+    100% {
+    background-position: 0 0;
+    }
+}
+
+#active_targets .active_targets-time-left {
+    width: auto;
+    text-align: left;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.active-target-remove-x {
+    margin-left: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+    float: right;
+    transform: rotate(45deg);
+    font-size: 1.1rem;
+    line-height: 1rem;
+}
+
+.active-target-remove-x:hover {
+    opacity: 1;
+    font-size: 1.2rem;
+}

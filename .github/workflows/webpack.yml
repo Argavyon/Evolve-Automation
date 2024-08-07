@@ -1,0 +1,60 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    paths:
+      - evolve_automation.meta.js
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout dev branch
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    
+    - name: Get version
+      run: |
+        echo "VERSION=$(sed -n 's/\/\/ *@version *//p' evolve_automation.meta.js)" >> $GITHUB_ENV 
+    
+    - name: Checkout releases branch
+      uses: actions/checkout@v4
+      with:
+        ref: releases
+        path: dist
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    
+    - name: Clean dist
+      run: rm dist/* || true
+
+    - name: Build package
+      run: |
+        npm install
+        npm run buildProd
+        cp evolve_automation.meta.js dist/
+    
+    - name: Make Commit
+      uses: EndBug/add-and-commit@v9
+      with:
+        cwd: dist
+        fetch: false
+        default_author: github_actions
+        message: "Build-${{ env.VERSION }}"
+        add: "."
+
+    - name: Make release
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create \
+          $VERSION \
+          --target releases \
+          --generate-notes

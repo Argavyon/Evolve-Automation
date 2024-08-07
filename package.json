@@ -1,0 +1,19 @@
+{
+    "name": "evolve-automation",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --color --mode=none",
+        "buildDebug": "webpack --color --mode=development",
+        "buildProd": "webpack --color --mode=production"
+    },
+    "main": "evolve_automation.user.js",
+    "devDependencies": {
+        "css-loader": "^7.1",
+        "css-minimizer-webpack-plugin": "^7.0",
+        "file-loader": "^6.2",
+        "style-loader": "^4.0",
+        "webpack": "^5.93",
+        "webpack-cli": "^4.10"
+    }
+}
