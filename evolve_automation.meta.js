@@ -11,6 +11,7 @@
 // @author       schoeggu
 // @author       davezatch
 // @author       Kewne
+// @author       Argavyon
 // @match        https://pmotschmann.github.io/Evolve/
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.7.1.min.js
