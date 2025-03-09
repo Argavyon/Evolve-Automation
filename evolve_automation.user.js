@@ -3,6 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      3.3.1.142
 // @description  try to take over the world!
+// @icon         https://pmotschmann.github.io/Evolve/evolved.ico
 // @downloadURL  https://github.com/Vollch/Evolve-Automation/raw/master/evolve_automation.user.js
 // @updateURL    https://github.com/Vollch/Evolve-Automation/raw/master/evolve_automation.meta.js
 // @author       Fafnir
@@ -16,7 +17,7 @@
 // @require      https://code.jquery.com/jquery-3.7.1.min.js
 // @require      https://code.jquery.com/ui/1.12.1/jquery-ui.min.js
 // ==/UserScript==
-//
+
 // This script forked from TMVictor's script version 3.3.1. Original script: https://gist.github.com/TMVictor/3f24e27a21215414ddc68842057482da
 //
 // Most of script options have tooltips, explaining what they do, read them if you have a questions.
@@ -16064,14 +16065,16 @@
             }
         };
 
-        let uniqPicked = isValdi + isSludge + isUltraSludge;
-        if (uniqPicked > 1) {
-            raceName = "Valdi and Sludge can not be combined!";
+        let uniqPicked = [
+            isValdi ? races.junker.name : null,
+            isSludge ? races.sludge.name : null,
+            isUltraSludge ? races.ultra_sludge.name : null
+        ].filter(e => e);
+        if (uniqPicked.length > 1) {
+            raceName = `${[uniqPicked.slice(0, -1).join(', '), uniqPicked.at(-1)].join(' and ')} can not be combined!`;
             raceClass = "has-text-danger";
-        } else if (uniqPicked === 1) {
-            let name = isValdi ? races.junker.name :
-                       isSludge ? races.sludge.name :
-                       isUltraSludge ? races.ultra_sludge.name : "???";
+        } else if (uniqPicked.length === 1) {
+            let name = uniqPicked[0];
             if (race && race !== races.junker && race !== races.sludge && race !== races.ultra_sludge) {
                 raceName = name + ", " + game.loc(`genelab_genus_${race.genus}`);
                 raceClass = getRaceColor(race);
